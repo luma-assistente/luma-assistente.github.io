@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luma - Sua assistente virtual inteligente desenvolvida em Python para respostas precisas e interações naturais">
+    <title>Luma - Sua Assistente Virtual Inteligente</title>
+    
+    <!-- Pré-conexão para CDNs -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- CSS otimizado -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fallback para caso o CSS não carregue -->
+    <noscript>
+        <style>
+            /* Estilos básicos sem JavaScript */
+            .mobile-menu { display: none; }
+            .nav-links { display: flex; }
+        </style>
+    </noscript>
+    
+    <!-- Carregamento otimizado do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+          integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Header com ARIA melhorada -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="navbar" aria-label="Navegação principal">
+                <div class="logo">
+                    <span class="luma-icon" aria-hidden="true">✨</span>
+                    <h1>Luma</h1>
+                </div>
+                <ul class="nav-links" role="menu">
+                    <li role="none"><a href="#features" role="menuitem">Recursos</a></li>
+                    <li role="none"><a href="#how-it-works" role="menuitem">Como Funciona</a></li>
+                    <li role="none"><a href="#testimonials" role="menuitem">Depoimentos</a></li>
+                    <li role="none"><a href="#contact" role="menuitem">Contato</a></li>
+                </ul>
+                <button class="mobile-menu" aria-label="Menu móvel" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero section com loading lazy para imagem -->
+    <section class="hero" aria-labelledby="hero-heading">
+        <div class="container">
+            <div class="hero-content">
+                <h1 id="hero-heading">Conheça Luma, sua assistente virtual inteligente</h1>
+                <p>Desenvolvida em Python para oferecer respostas precisas e interações naturais.</p>
+                <div class="cta-buttons">
+                    <a href="#demo" class="btn primary">Experimente Agora</a>
+                    <a href="#features" class="btn secondary">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="ai-avatar">
+                    <img src="luma-avatar.png" alt="Avatar da Luma" class="avatar" loading="lazy">
+                    <div class="pulse-effect" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Recursos com semântica melhorada -->
+    <section id="features" class="features" aria-labelledby="features-heading">
+        <div class="container">
+            <h2 id="features-heading" class="section-title">Recursos Avançados</h2>
+            <div class="features-grid" role="list">
+                <div class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Processamento Natural</h3>
+                    <p>Entenda e responda comandos em linguagem natural com tecnologia NLP avançada.</p>
+                </div>
+                <div class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Automação Inteligente</h3>
+                    <p>Automatize tarefas repetitivas e aumente sua produtividade diária. <span class="badge">Em Breve</span></p>
+                </div>
+                <div class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Segurança Garantida</h3>
+                    <p>Todos os dados são processados localmente sem armazenamento em nuvem.</p>
+                </div>
+                <div class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Personalizável</h3>
+                    <p>Adaptável às suas necessidades específicas com módulos expansíveis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Como Funciona com links otimizados -->
+    <section id="how-it-works" class="how-it-works" aria-labelledby="how-it-works-heading">
+        <div class="container">
+            <h2 id="how-it-works-heading" class="section-title">Como Luma Funciona</h2>
+            <div class="steps" role="list">
+                <div class="step" role="listitem">
+                    <div class="step-number" aria-hidden="true">1</div>
+                    <div class="step-content">
+                        <h3>Instalação Simples</h3>
+                        <p>Baixe o pacote Python e instale com poucos comandos no seu ambiente.</p>
+                    </div>
+                </div>
+                <div class="step" role="listitem">
+                    <div class="step-number" aria-hidden="true">2</div>
+                    <div class="step-content">
+                        <h3>Configuração Rápida</h3>
+                        <p>Personalize as preferências e conecte aos seus serviços favoritos.</p>
+                    </div>
+                </div>
+                <div class="step" role="listitem">
+                    <div class="step-number" aria-hidden="true">3</div>
+                    <div class="step-content">
+                        <h3>Interação Natural</h3>
+                        <p>Comece a conversar usando voz ou texto e obtenha respostas inteligentes.</p>
+                    </div>
+                </div>
+                <div class="step" role="listitem">
+                    <div class="step-number" aria-hidden="true">4</div>
+                    <div class="step-content">
+                        <h3>Quer Saber Mais?</h3>
+                        <a href="./howitworks.html" class="link-button">Clique Aqui <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Demo com melhor acessibilidade -->
+    <section id="demo" class="demo" aria-labelledby="demo-heading">
+        <div class="container">
+            <h2 id="demo-heading" class="section-title">Experimente Luma</h2>
+            <div class="demo-container">
+                <div class="chat-interface" role="region" aria-labelledby="chat-heading">
+                    <div class="chat-header">
+                        <div class="chat-avatar">
+                            <img src="luma-avatar-small.png" alt="Luma" loading="lazy">
+                        </div>
+                        <div class="chat-status">
+                            <span class="status-dot" aria-hidden="true"></span>
+                            <span id="chat-heading">Online</span>
+                        </div>
+                    </div>
+                    <div class="chat-messages" id="chat-messages" role="log">
+                        <div class="message luma-message" role="article">
+                            <p>Olá! Eu sou Luma, sua assistente virtual. Como posso ajudar você hoje?</p>
+                        </div>
+                    </div>
+                    <div class="chat-input" role="form">
+                        <label for="user-input" class="sr-only">Digite sua mensagem</label>
+                        <input type="text" id="user-input" placeholder="Digite sua mensagem..." aria-label="Mensagem para Luma">
+                        <button id="send-button" aria-label="Enviar mensagem">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="demo-info">
+                    <h3>Interface Intuitiva</h3>
+                    <p>Experimente uma prévia da interação com Luma. No ambiente real, você pode usar tanto texto quanto comandos de voz.</p>
+                    <ul class="demo-features" role="list">
+                        <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i> Respostas em tempo real</li>
+                        <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i> Contexto de conversa</li>
+                        <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i> Multiplataforma</li>
+                    </ul>
+                    <a href="#download" class="btn primary">Download Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos com semântica melhorada -->
+    <section id="testimonials" class="testimonials" aria-labelledby="testimonials-heading">
+        <div class="container">
+            <h2 id="testimonials-heading" class="section-title">O que dizem sobre Luma</h2>
+            <div class="testimonials-grid" role="list">
+                <div class="testimonial-card" role="listitem">
+                    <div class="testimonial-content" role="article">
+                        <blockquote>
+                            <p>"Luma revolucionou minha produtividade. Agora consigo focar no que realmente importa enquanto ela cuida das tarefas repetitivas."</p>
+                        </blockquote>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="user1.jpg" alt="Carlos Silva" loading="lazy">
+                        <div>
+                            <h4>Carlos Silva</h4>
+                            <span>Desenvolvedor Sênior</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" role="listitem">
+                    <div class="testimonial-content" role="article">
+                        <blockquote>
+                            <p>"Como assistente pessoal, Luma superou todas as minhas expectativas. A precisão das respostas é impressionante."</p>
+                        </blockquote>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="user2.jpg" alt="Ana Oliveira" loading="lazy">
+                        <div>
+                            <h4>Ana Oliveira</h4>
+                            <span>Gerente de Projetos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Download com informações claras -->
+    <section id="download" class="download" aria-labelledby="download-heading">
+        <div class="container">
+            <div class="download-content">
+                <h2 id="download-heading">Pronto para experimentar Luma?</h2>
+                <p>Baixe agora e transforme sua interação com tecnologia.</p>
+                <div class="download-buttons" role="group" aria-label="Opções de download">
+                    <a href="#" class="btn download-btn" role="button">
+                        <i class="fab fa-windows" aria-hidden="true"></i> Windows
+                    </a>
+                    <a href="#" class="btn download-btn disabled" role="button" aria-disabled="true">
+                        <i class="fab fa-apple" aria-hidden="true"></i> macOS <span class="badge">Em Breve</span>
+                    </a>
+                    <a href="#" class="btn download-btn disabled" role="button" aria-disabled="true">
+                        <i class="fab fa-linux" aria-hidden="true"></i> Linux <span class="badge">Em Breve</span>
+                    </a>
+                </div>
+                <div class="version-info">
+                    <span>Versão atual: 2.1.4 | Opcional Python no Computador</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato com formulário acessível -->
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+        <div class="container">
+            <h2 id="contact-heading" class="section-title">Fale Conosco</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <ul role="list">
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> bressytech@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rio de Janeiro, Brasil</li>
+                        <li><i class="fas fa-code-branch" aria-hidden="true"></i> GitHub: github.com/luma-assistente</li>
+                    </ul>
+                    <div class="social-links" role="list">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Discord"><i class="fab fa-discord" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" aria-label="Formulário de contato">
+                        <div class="form-group">
+                            <label for="name" class="sr-only">Seu nome</label>
+                            <input type="text" id="name" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Seu e-mail</label>
+                            <input type="email" id="email" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="sr-only">Sua mensagem</label>
+                            <textarea id="message" placeholder="Sua mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer com navegação secundária -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="luma-icon" aria-hidden="true">✨</span>
+                    <h3>Luma</h3>
+                    <p>Assistente Virtual Inteligente</p>
+                </div>
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h4>Produto</h4>
+                        <ul role="list">
+                            <li role="listitem"><a href="#features">Recursos</a></li>
+                            <li role="listitem"><a href="#how-it-works">Como Funciona</a></li>
+                            <li role="listitem"><a href="#download">Download</a></li>
+                            <li role="listitem"><a href="#">Preços</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h4>Desenvolvimento</h4>
+                        <ul role="list">
+                            <li role="listitem"><a href="#">Documentação</a></li>
+                            <li role="listitem"><a href="#">API</a></li>
+                            <li role="listitem"><a href="#">GitHub</a></li>
+                            <li role="listitem"><a href="#">Contribuir</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h4>Empresa</h4>
+                        <ul role="list">
+                            <li role="listitem"><a href="#">Sobre</a></li>
+                            <li role="listitem"><a href="#">Blog</a></li>
+                            <li role="listitem"><a href="#">Carreiras</a></li>
+                            <li role="listitem"><a href="#contact">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Luma Assistente Virtual. Todos os direitos reservados.</p>
+                <div class="legal-links" role="list">
+                    <a href="#" role="listitem">Termos de Serviço</a>
+                    <a href="#" role="listitem">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript otimizado com fallback -->
+    <script src="script.js"></script>
+    <noscript>
+        <style>
+            /* Estilos para quando o JavaScript está desativado */
+            .mobile-menu { display: none; }
+            .nav-links { display: flex; }
+        </style>
+    </noscript>
+    
+    <!-- CSS para screen readers -->
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25em 0.5em;
+            font-size: 0.75em;
+            background-color: #f0f0f0;
+            color: #666;
+            border-radius: 0.25em;
+            margin-left: 0.5em;
+        }
+        
+        .link-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .disabled {
+            opacity: 0.6;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+    </style>
+</body>
+</html>
