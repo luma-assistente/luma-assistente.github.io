@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luma - Sua assistente virtual inteligente com tecnologia de ponta">
+    <title>Luma - Assistente Virtual Inteligente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/core.min.js"></script>
+    <style>
+        /* Variáveis de cores e estilos */
+        :root {
+            --primary-color: #6c63ff;
+            --secondary-color: #4d44db;
+            --accent-color: #ff6584;
+            --dark-color: #2d3748;
+            --light-color: #f7fafc;
+            --gray-color: #718096;
+            --light-gray: #e2e8f0;
+            --success-color: #48bb78;
+            --warning-color: #ed8936;
+            --danger-color: #f56565;
+        }
+
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Tipografia */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .luma-icon {
+            font-size: 2rem;
+        }
+
+        /* Seções */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(108, 99, 255, 0.1);
+        }
+
+        /* Changelog com suporte a Markdown */
+        .changelog-container {
+            margin-top: 2rem;
+        }
+
+        .changelog-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--light-gray);
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .changelog-box pre {
+            background: #f8f8f8;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        .changelog-box code {
+            font-family: 'Courier New', Courier, monospace;
+            background: #f8f8f8;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .changelog-box h1, 
+        .changelog-box h2, 
+        .changelog-box h3 {
+            margin: 1.5rem 0 1rem;
+            color: var(--dark-color);
+        }
+
+        .changelog-box ul, 
+        .changelog-box ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .changelog-box a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .changelog-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* Detecção de OS */
+        .os-detection {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .os-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            section {
+                padding: 2rem 0;
+            }
+            
+            .section-title {
+                margin-bottom: 2rem;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-robot luma-icon"></i>
+                <h1>Luma</h1>
+            </div>
+            <p>Sua assistente virtual inteligente</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="download">
+            <div class="card">
+                <h2 class="section-title">Download</h2>
+                
+                <div class="os-detection">
+                    <i class="fas fa-desktop os-icon"></i>
+                    <div>
+                        <p>Sistema detectado: <strong id="os-box">...</strong></p>
+                    </div>
+                </div>
+                
+                <p>Versão mais recente: <span class="badge" id="latest-version">carregando...</span></p>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <a id="download-windows" class="btn btn-primary" href="#">
+                        <i class="fab fa-windows"></i> Windows
+                    </a>
+                    <a href="#" class="btn btn-secondary" disabled>
+                        <i class="fab fa-apple"></i> macOS <span class="badge">em breve</span>
+                    </a>
+                    <a href="#" class="btn btn-secondary" disabled>
+                        <i class="fab fa-linux"></i> Linux <span class="badge">em breve</span>
+                    </a>
+                </div>
+                
+                <div class="changelog-container">
+                    <h3><i class="fas fa-list-alt"></i> Changelog</h3>
+                    <div id="changelog" class="changelog-box">
+                        <p>Carregando as últimas atualizações...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Luma Assistente Virtual. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configuração do Marked para renderizar Markdown
+        marked.setOptions({
+            highlight: function(code, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                    return hljs.highlight(lang, code).value;
+                }
+                return hljs.highlightAuto(code).value;
+            },
+            langPrefix: 'hljs language-',
+            breaks: true,
+            gfm: true
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Detecção do sistema operacional
+            const userOS = navigator.userAgent;
+            const osBox = document.getElementById("os-box");
+            
+            if (osBox) {
+                if (/Win/i.test(userOS)) {
+                    osBox.textContent = "Windows";
+                    osBox.innerHTML += ' <i class="fab fa-windows"></i>';
+                } else if (/Linux/i.test(userOS)) {
+                    osBox.textContent = "Linux";
+                    osBox.innerHTML += ' <i class="fab fa-linux"></i>';
+                } else if (/Mac/i.test(userOS)) {
+                    osBox.textContent = "macOS";
+                    osBox.innerHTML += ' <i class="fab fa-apple"></i>';
+                } else {
+                    osBox.textContent = "Sistema desconhecido";
+                }
+            }
+
+            // Buscar informações da última versão no GitHub
+            const versionSpan = document.getElementById("latest-version");
+            const changelogDiv = document.getElementById("changelog");
+            const downloadBtn = document.getElementById("download-windows");
+
+            const repo = "luma-assistente/luma-assistente.github.io";
+            const apiUrl = `https://api.github.com/repos/${repo}/releases/latest`;
+
+            fetch(apiUrl)
+                .then(res => {
+                    if (!res.ok) throw new Error("Falha ao buscar versão");
+                    return res.json();
+                })
+                .then(data => {
+                    if (versionSpan) {
+                        versionSpan.textContent = data.tag_name || "v?";
+                    }
+
+                    if (changelogDiv && data.body) {
+                        // Renderizar Markdown
+                        changelogDiv.innerHTML = marked.parse(data.body);
+                    }
+
+                    if (downloadBtn && data.assets && data.assets.length > 0) {
+                        const exe = data.assets.find(asset => asset.name.endsWith(".exe"));
+                        if (exe) downloadBtn.href = exe.browser_download_url;
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro:", error);
+                    if (versionSpan) versionSpan.textContent = "Erro ao buscar versão";
+                    if (changelogDiv) changelogDiv.innerHTML = "<p>Não foi possível carregar o changelog. Por favor, tente novamente mais tarde.</p>";
+                });
+        });
+    </script>
+</body>
+</html>
