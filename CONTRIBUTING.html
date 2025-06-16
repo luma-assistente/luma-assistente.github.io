@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribuindo para a Luma Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6c63ff;
+            --secondary-color: #4d44db;
+            --accent-color: #ff6584;
+            --dark-color: #2d3748;
+            --light-color: #f7fafc;
+            --gray-color: #718096;
+            --light-gray: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+        }
+        
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            margin: 1.8rem 0 1rem;
+            font-size: 1.4rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--dark-color);
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.8rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        code {
+            background: rgba(108, 99, 255, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            color: var(--secondary-color);
+        }
+        
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.2rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            tab-size: 4;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            color: inherit;
+        }
+        
+        .note {
+            background: rgba(108, 99, 255, 0.08);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .note strong {
+            color: var(--primary-color);
+        }
+        
+        .warning {
+            background: rgba(245, 101, 101, 0.08);
+            border-left: 4px solid var(--danger-color);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .icon {
+            margin-right: 0.6rem;
+            color: var(--primary-color);
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--gray-color);
+            padding-top: 2rem;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(108, 99, 255, 0.3);
+        }
+        
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(108, 99, 255, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1.2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            pre {
+                padding: 1rem;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-hands-helping"></i> Contribuindo para a Luma</h1>
+        <p class="subtitle">Obrigado pelo seu interesse em contribuir com a Luma! Valorizamos seu tempo e esforço para ajudar a melhorar este projeto.</p>
+        <a href="https://github.com/luma-assistente/luma-core" class="btn">
+            <i class="fab fa-github"></i> Repositório no GitHub
+        </a>
+    </header>
+    
+    <section id="code-of-conduct">
+        <h2><i class="fas fa-book icon"></i>Código de Conduta</h2>
+        <p>Antes de contribuir, por favor leia e siga nosso <a href="CODE_OF_CONDUCT.html">Código de Conduta</a>. Estamos comprometidos em fornecer um ambiente amigável, seguro e acolhedor para todos os contribuidores.</p>
+    </section>
+    
+    <section id="ways-to-contribute">
+        <h2><i class="fas fa-tasks icon"></i>Formas de Contribuir</h2>
+        <p>Existem várias maneiras de contribuir com a Luma:</p>
+        
+        <h3><i class="fas fa-bug icon"></i>Reportando Bugs</h3>
+        <p>Encontrou um bug? Por favor abra uma issue no GitHub com:</p>
+        <ul>
+            <li>Uma descrição clara do problema</li>
+            <li>Passos para reproduzir o erro</li>
+            <li>Comportamento esperado vs. atual</li>
+            <li>Capturas de tela ou mensagens de erro (se aplicável)</li>
+            <li>Informações do seu sistema (SO, versão do Python, etc.)</li>
+        </ul>
+        
+        <h3><i class="fas fa-lightbulb icon"></i> Sugerindo Melhorias</h3>
+        <p>Tem uma ideia para melhorar a Luma? Adoraríamos ouvir! Ao sugerir novas funcionalidades:</p>
+        <ul>
+            <li>Explique o problema que sua feature resolveria</li>
+            <li>Descreva sua solução proposta</li>
+            <li>Inclua mockups ou exemplos se possível</li>
+        </ul>
+        
+        <h3><i class="fas fa-code icon"></i> Contribuições de Código</h3>
+        <p>Quer contribuir com código? Siga estes passos:</p>
+    </section>
+    
+    <section id="development-workflow">
+        <h2><i class="fas fa-code-branch icon"></i>Fluxo de Desenvolvimento</h2>
+        
+        <div class="note">
+            <p><strong>Importante:</strong> Antes de começar qualquer trabalho de desenvolvimento, por favor abra uma issue para discutir suas mudanças propostas com os mantenedores.</p>
+        </div>
+        
+        <h3><i class="fas fa-laptop-code icon"></i>Configurando Seu Ambiente</h3>
+        
+        <ol>
+            <li>
+                <strong>Faça um fork do repositório</strong>
+                <p>Clique no botão "Fork" no canto superior direito da <a href="https://github.com/luma-assistente/luma-core">página do repositório</a>.</p>
+            </li>
+            
+            <li>
+                <strong>Clone seu fork</strong>
+                <pre><code>git clone https://github.com/seu-usuario/luma-core.git
+cd luma-core</code></pre>
+            </li>
+            
+            <li>
+                <strong>Configure o remote upstream</strong>
+                <pre><code>git remote add upstream https://github.com/luma-assistente/luma-core.git</code></pre>
+            </li>
+            
+            <li>
+                <strong>Crie um ambiente virtual</strong>
+                <pre><code>python -m venv venv
+source venv/bin/activate  # No Windows use `venv\Scripts\activate`</code></pre>
+            </li>
+            
+            <li>
+                <strong>Instale as dependências</strong>
+                <pre><code>pip install -r requirements-dev.txt</code></pre>
+            </li>
+            
+            <li>
+                <strong>Crie uma nova branch</strong>
+                <pre><code>git checkout -b feature/nome-da-sua-feature</code></pre>
+                <p>Use nomes descritivos como <code>fix/corrige-login</code> ou <code>feature/modulo-tempo</code>.</p>
+            </li>
+        </ol>
+        
+        <h3><i class="fas fa-edit icon"></i>Fazendo Alterações</h3>
+        
+        <div class="note">
+            <p><strong>Padrão de Código:</strong> Por favor siga nossos padrões:</p>
+            <ul>
+                <li>Use 4 espaços para indentação</li>
+                <li>Siga as diretrizes PEP 8</li>
+                <li>Inclua type hints para novas funções</li>
+                <li>Escreva docstrings para todos os métodos públicos</li>
+            </ul>
+        </div>
+        
+        <ol>
+            <li>Faça suas alterações seguindo os padrões do projeto</li>
+            <li>Escreva testes para novas funcionalidades</li>
+            <li>Execute os testes:
+                <pre><code>pytest</code></pre>
+            </li>
+            <li>Formate seu código:
+                <pre><code>black .
+isort .</code></pre>
+            </li>
+            <li>Faça commit com mensagens descritivas:
+                <pre><code>git commit -m "feat: adiciona integração com módulo de tempo"
+git commit -m "fix: corrige autenticação no login"</code></pre>
+                <p>Seguimos <a href="https://www.conventionalcommits.org/" target="_blank">Conventional Commits</a> para mensagens de commit.</p>
+            </li>
+            <li>Envie para seu fork:
+                <pre><code>git push origin feature/nome-da-sua-feature</code></pre>
+            </li>
+        </ol>
+        
+        <h3><i class="fas fa-code-merge icon"></i>Criando um Pull Request</h3>
+        
+        <ol>
+            <li>Acesse o <a href="https://github.com/luma-assistente/luma-core">repositório principal</a> no GitHub</li>
+            <li>Clique em "New Pull Request"</li>
+            <li>Selecione seu fork e branch</li>
+            <li>Preencha o template do PR com:
+                <ul>
+                    <li>Um título e descrição claros</li>
+                    <li>Referência a issues relacionadas</li>
+                    <li>Capturas de tela ou vídeos se aplicável</li>
+                </ul>
+            </li>
+            <li>Envie o PR e aguarde a revisão</li>
+        </ol>
+        
+        <div class="note">
+            <p><strong>Aviso:</strong> Nossa equipe revisa PRs regularmente. Por favor seja paciente e responsivo a quaisquer alterações solicitadas.</p>
+        </div>
+    </section>
+    
+    <section id="testing">
+        <h2><i class="fas fa-vial icon"></i>Testes</h2>
+        <p>Todas as contribuições devem incluir testes apropriados. Usamos pytest para nossa suíte de testes.</p>
+        
+        <h3>Executando Testes</h3>
+        <pre><code>pytest</code></pre>
+        
+        <h3>Cobertura de Testes</h3>
+        <p>Verifique a cobertura de testes com:</p>
+        <pre><code>pytest --cov=luma</code></pre>
+        <p>Buscamos manter pelo menos 80% de cobertura de testes.</p>
+    </section>
+    
+    <section id="documentation">
+        <h2><i class="fas fa-book-open icon"></i>Documentação</h2>
+        <p>Uma boa documentação é crucial. Ao adicionar novas funcionalidades:</p>
+        <ul>
+            <li>Atualize os arquivos de documentação relevantes</li>
+            <li>Inclua docstrings para todos os métodos públicos</li>
+            <li>Adicione exemplos de uso onde apropriado</li>
+        </ul>
+        
+        <h3>Construindo a Documentação</h3>
+        <pre><code>cd docs
+make html</code></pre>
+    </section>
+    
+    <section id="community">
+        <h2><i class="fas fa-users icon"></i>Comunidade</h2>
+        <p>Junte-se aos nossos canais de comunidade para ajuda e discussão:</p>
+        <ul>
+            <li><strong>Discord:</strong> <a href="https://discord.gg/seu-link" target="_blank">Comunidade Luma Assistant</a></li>
+            <li><strong>Fórum:</strong> <a href="https://forum.luma-assistant.com" target="_blank">Fórum Oficial</a></li>
+            <li><strong>Twitter:</strong> <a href="https://twitter.com/LumaAssistant" target="_blank">@LumaAssistant</a></li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>Obrigado por contribuir com a Luma Assistant! Sua ajuda torna este projeto melhor para todos.</p>
+        <p><i class="fas fa-heart" style="color: var(--accent-color);"></i> Equipe Luma</p>
+    </footer>
+</body>
+</html>
